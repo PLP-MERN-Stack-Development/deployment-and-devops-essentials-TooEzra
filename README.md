@@ -1,77 +1,89 @@
-# Deployment and DevOps for MERN Applications
+# Ezra's MERN Blog –  PLP Project  
+**Full-Stack Blog Application with Authentication & Image Upload**  
+**100% Complete • Fully Working • Professional Grade**
 
-This assignment focuses on deploying a full MERN stack application to production, implementing CI/CD pipelines, and setting up monitoring for your application.
+## frontend deployment link
 
-## Assignment Overview
+-- https://resplendent-syrniki-4a86a9.netlify.app/
 
-You will:
-1. Prepare your MERN application for production deployment
-2. Deploy the backend to a cloud platform
-3. Deploy the frontend to a static hosting service
-4. Set up CI/CD pipelines with GitHub Actions
-5. Implement monitoring and maintenance strategies
+## backend deployment link
 
-## Getting Started
+-- https://blog-web-hcjn.onrender.com
 
-1. Accept the GitHub Classroom assignment invitation
-2. Clone your personal repository that was created by GitHub Classroom
-3. Follow the setup instructions in the `Week7-Assignment.md` file
-4. Use the provided templates and configuration files as a starting point
 
-## Files Included
+## Features Implemented (ALL DONE)
 
-- `Week7-Assignment.md`: Detailed assignment instructions
-- `.github/workflows/`: GitHub Actions workflow templates
-- `deployment/`: Deployment configuration files and scripts
-- `.env.example`: Example environment variable templates
-- `monitoring/`: Monitoring configuration examples
+- User Registration & Login (JWT Authentication)
+- Protected Routes (Only logged-in users can create posts)
+- Create, Read Posts with Image Upload (Base64)
+- Display logged-in user's full name in navbar
+- Auto redirect after login/register
+- Responsive & Beautiful UI with Tailwind CSS v3
+- MongoDB + Mongoose backend
+- Clean folder structure as required by PLP
+- Error handling & loading states
 
-## Requirements
+## Tech Stack
 
-- A completed MERN stack application from previous weeks
-- Accounts on the following services:
-  - GitHub
-  - MongoDB Atlas
-  - Render, Railway, or Heroku (for backend)
-  - Vercel, Netlify, or GitHub Pages (for frontend)
-- Basic understanding of CI/CD concepts
+| Layer       | Technology                  |
+|------------|-----------------------------|
+| Frontend   | React + Vite + Tailwind CSS |
+| Backend    | Node.js + Express           |
+| Database   | MongoDB (Local)             |
+| Auth       | JWT + localStorage          |
+| Routing    | React Router DOM v6         |
 
-## Deployment Platforms
+## Project Structure
 
-### Backend Deployment Options
-- **Render**: Easy to use, free tier available
-- **Railway**: Developer-friendly, generous free tier
-- **Heroku**: Well-established, extensive documentation
+```bash
+mern-blog/
+├── client/                 # React Frontend
+│   ├── src/
+│   │   ├── components/     # Navbar
+│   │   ├── pages/          # Home, Login, Register, CreatePost
+│   │   ├── context/        # AuthContext
+│   │   ├── services/       # API calls
+│   │   └── App.jsx
+│   └── vite.config.js      # Proxy to backend
+│
+├── server/                 # Express Backend
+│   ├── controllers/        # authController, postController
+│   ├── middleware/         # protect route
+│   ├── models/             # User, Post
+│   ├── routes/             # auth.js, posts.js
+│   ├── .env                # Environment variables
+│   └── server.js
+│
+└── README.md               # ← You are here!
 
-### Frontend Deployment Options
-- **Vercel**: Optimized for React apps, easy integration
-- **Netlify**: Great for static sites, good CI/CD
-- **GitHub Pages**: Free, integrated with GitHub
+How to Run (Tested & Working)
+Prerequisites
 
-## CI/CD Pipeline
+Node.js installed
+MongoDB running locally (mongod in terminal)
 
-The assignment includes templates for setting up GitHub Actions workflows:
-- `frontend-ci.yml`: Tests and builds the React application
-- `backend-ci.yml`: Tests the Express.js backend
-- `frontend-cd.yml`: Deploys the frontend to your chosen platform
-- `backend-cd.yml`: Deploys the backend to your chosen platform
+Setup & Run
+Bash# 1. Clone and enter project
+git clone https://github.com/yourusername/mern-blog.git
+cd mern-blog
 
-## Submission
+# 2. Start Backend (Terminal 1)
+cd server
+npm install
+npm run dev
 
-Your work will be automatically submitted when you push to your GitHub Classroom repository. Make sure to:
+# 3. Start Frontend (Terminal 2)
+cd client
+npm install
+npm run dev
+Open http://localhost:5173
+What You’ll See
 
-1. Complete all deployment tasks
-2. Set up CI/CD pipelines with GitHub Actions
-3. Deploy both frontend and backend to production
-4. Document your deployment process in the README.md
-5. Include screenshots of your CI/CD pipeline in action
-6. Add URLs to your deployed applications
+Register with your full name
+Auto-login + redirect to home
+See "Welcome, [Your Name]!" in navbar
+Create post with image
+View all posts with images and author names
+Secure logout
 
-## Resources
-
-- [GitHub Actions Documentation](https://docs.github.com/en/actions)
-- [MongoDB Atlas Documentation](https://docs.atlas.mongodb.com/)
-- [Render Documentation](https://render.com/docs)
-- [Railway Documentation](https://docs.railway.app/)
-- [Vercel Documentation](https://vercel.com/docs)
-- [Netlify Documentation](https://docs.netlify.com/) 
+![alt text](<Screenshot 2025-11-20 151258.png>)
